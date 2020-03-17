@@ -1,0 +1,16 @@
+{
+  "name": "capstone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "validatesignup.js",
+  "dependencies": {
+    "firebase": "^7.1.0",
+    "firebase-admin": "^8.6.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

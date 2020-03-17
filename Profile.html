@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset='utf-8'/>
+	<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css'>
+	<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
+	<script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js'></script>
+	<meta http-equiv='X-UA-Compatible' content='IE=edge'/>
+
+	<link rel='icon' type='text/css' href='irobrixqw1.png'>
+	<title>Profile</title>
+	
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  
+<link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+  <!-- Add Firebase products that you want to use -->
+  
+    <link href='vendor/mdi-font/css/material-design-iconic-font.min.css' rel='stylesheet' media='all'>
+    <link href='vendor/font-awesome-4.7/css/font-awesome.min.css' rel='stylesheet' media='all'>
+    <!-- Font special for pages-->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i' rel='stylesheet'>
+
+    <!-- Vendor CSS-->
+    <link href='vendor/select2/select2.min.css' rel='stylesheet' media='all'>
+    <link href='vendor/datepicker/daterangepicker.css' rel='stylesheet' media='all'>
+
+    <!-- Main CSS-->
+    <link href='css/main.css' rel='stylesheet' media='all'>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+    <script language='javascript'>
+var popupWindow = null;
+function centeredPopup(url,winName,w,h,scroll){
+LeftPosition = (screen.width) ? (screen.width-w)/2 : 0;
+TopPosition = (screen.height) ? (screen.height-h)/2 : 0;
+settings =
+'height='+h+',width='+w+',top='+TopPosition+',left='+LeftPosition+',scrollbars='+scroll+',resizable'
+popupWindow = window.open(url,winName,settings)
+}
+</script>
+
+ 
+	<style type='text/css'>
+		*
+		{
+			font-family: 'Montserrat', sans-serif;
+		}
+		body
+		{
+			font-family: Segoe UI;
+		}
+		.container
+		{
+			height: 100%;
+			width: 100%;
+		}
+		
+		h3
+		{
+			padding-left: 10px;
+			padding-right: 10px;
+			padding-bottom: 7px;
+		}
+		a
+		{
+			text-decoration: none;
+		}
+		nav ul
+		{
+			margin-left: 360px;
+			display: flex;
+		}
+		nav ul li
+		{
+			list-style: none;
+			
+		}
+		a
+		{
+			text-decoration: none;
+		}
+		nav ul li a
+		{
+
+			font-weight: bold;
+			font-size: 15px;
+			padding: 1rem 0;
+			margin: 0 3rem;
+			position: relative;
+			letter-spacing: 1px;
+			color: black;
+			transition: .5s;
+		}
+		nav ul li a:last-child
+		{
+			margin-right: 0;
+		}
+		nav ul li a::before,
+		nav ul li a::after
+		{
+			text-decoration: none;
+			content: '';
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background: #E52E2E;
+			transition: all.5s;
+			transform: scaleX(0);
+
+		}
+		nav ul li a:hover:before
+		{
+			transform: scaleX(1);
+			transform-origin: left;
+		}
+		nav ul li a:after
+		{
+			top: 0;
+		}
+		nav ul li a:before
+		{
+			bottom: 0; 
+		}
+		nav ul li a:hover:after
+		{
+			transform: scaleX(1);
+			transform-origin: right;
+		}
+		nav ul li a:hover
+		{
+			text-decoration: none;
+			color: #E52E2E;
+			transition-delay: .1s;
+		}
+		nav
+		{
+			padding-top: 5rem;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			text-transform: uppercase;
+			font-size: 15px;
+		}
+		.container_animated_slideInLeft , .logo
+		{
+			float: left;
+			margin-top: 5px;
+		}
+		.container_animated_slideInLeft
+		{
+
+			margin-left: 150px;
+		}
+		.logo
+		{
+			margin-top: 30px;
+			margin-left: 50px;
+		}
+		.profile_pic
+		{
+			border-radius: 50%;
+			margin-top: 30px;
+		}
+		.name
+		{
+			margin-left: 50px;
+			font-size: 20px;
+			text-decoration-style: bold;
+		}
+		.inner
+		{
+			margin-top: 20px;
+			border-radius:10px;
+			align-items: center;
+			height: 500px;
+			width: 50%;
+		}
+			
+		.inner
+		{
+			float: left;
+		}
+		.inner2
+		{
+			margin-left:45%;
+		}
+		span
+		{
+			word-spacing: 50px;
+		}
+		button
+		{
+			background-color: #FFCF4c;
+			border-radius:4px;
+			border-style: none;
+			color: white;
+		}
+		border-style: none;
+		}
+		.name, .hello
+		{
+			margin-left: 50px;
+		}
+		.name
+		{
+			font-size: 15px;
+			color: grey;
+		}
+		.hello
+		{
+			color: black;
+		}
+		.edit_profile
+		{
+			margin-top: 10px;
+			border-style: none;
+			background-color: #E52E2E;
+			border-radius: 0px;
+			color: white;
+			width: 100px;
+			height: 25px;
+		}
+		.edit_profile:hover
+		{
+			color: white;
+			transform:translateY(-2px);
+			box-shadow: .5rem .5rem 2rem rgba(0,0,0,.2);
+			background-color: #FFCF4C;
+		}
+		/*#wrapper
+		{
+			height: 80%;
+			width: 100%;
+		}*/
+		.profile
+		{
+			margin-top: 50px;
+			height: 100%;
+			width: 65%;
+		}
+		.loading
+		{
+			word-spacing: 5px;
+		}
+		.icon
+		{
+			height: 30px;
+			width: 30px;
+		}
+		.myorder
+		{
+			margin-top: 10px;
+			border-style: none;
+			background-color: #E52E2E;
+			border-radius: 0px;
+			color: white;
+			width: 100px;
+			height: 25px;
+		}
+		.myorder:hover
+		{
+			color: white;
+			transform:translateY(-2px);
+			box-shadow: .5rem .5rem 2rem rgba(0,0,0,.2);
+			background-color: #FFCF4C;
+		}
+		
+		{box-sizing: border-box;}
+
+/* Button used to open the chat form - fixed at the bottom of the page */
+
+
+/* The popup chat - hidden by default */
+
+
+/* Add styles to the form container */
+
+	</style>
+</head>
+<body>
+
+
+<!-- Modal -->
+<div id='myModal' class='modal fade' role='dialog'>
+  <div class='modal-dialog'>
+
+<!-- Modal content-->
+<div class='modal-content'>
+<div class='modal-header'>
+<button type='button' class='close' data-dismiss='modal'>×</button>
+<h4 class='modal-title'>Profile Update</h4>
+</div>
+<div class='modal-body'>
+
+        <form role='form' method='post' id='reused_form' >
+        
+
+        <div class='form-group'>
+            <label for='name'>
+                Name:</label>
+            <input type='text' class='form-control'
+            id='name1' name='name'  value=''>
+
+        </div>
+        <div class='form-group'>
+            <label for='email'>
+                Email:</label>
+            <input type='email' class='form-control' disabled="True"
+            id='email1' name='email' value=''>
+		</div>
+		<div class='form-group'>
+            <label for='Gender'>
+                Gender:</label>
+				<select id="Gender" >
+						<option value="MALE" >Male</option>
+						<option value="FEMALE">Female</option>
+						</select>
+        </div>
+        <div class='form-group'>
+            <label for='contact'>
+                contact:</label>
+            <input type='text' class='form-control'
+            id='contact' name='contact' value=''>
+        </div>
+        <div class='form-group'>
+            <label for='address'>
+                Address:</label>
+            <input type='text' class='form-control'
+            id='address1' name='address' value=''>
+		</div>
+		<div id="form-wrapper">
+        <div class='form-group'>
+            <label for='projects'>
+                Projects(Not For Customer Only Users):</label>
+            <input type='text' class='form-control'
+            id='projects' name='projects' value=''>
+        </div>
+        <div class='form-group'>
+            <label for='Experience'>
+                Experience(Not For Customer Only Users)::</label>
+            <input type='email' class='form-control'
+            id='Experience' name='Experience' value=''>
+        </div>
+        <div class='form-group'>
+            <label for='name'>
+                Bio:</label>
+            <textarea class='form-control' type='textarea' name='Bio'
+            id='Bio'  value=''
+            maxlength='6000' rows='7'></textarea>
+        </div>
+	</div>
+
+
+
+        <button type='button' class='btn btn-lg btn-success btn-block' id='btnContactUs' onclick='fn22();'>Update it! →</button>
+
+    </form>
+    <div id='success_message' style='width:100%; height:100%; display:none; '>
+        <h3>Sent your message successfully!</h3>
+    </div>
+    <div id='error_message'
+    style='width:100%; height:100%; display:none; '>
+        <h3>Error</h3>
+        Sorry there was an error sending your form.
+
+    </div>
+</div>
+
+</div>
+
+ </div>
+</div>
+
+<div class='container'>
+
+	<div class='logo'><a href='Home.html'><img src='irobrixqw1.png' height='32px' width='34px'></a></div>
+	<div class='container_animated_slideInLeft'>
+		<nav>
+			
+			<ul>
+				<li><a href='home.html'>Home</a></li>
+				<li><a href='store/store.php'>Store</a></li>
+				<li><a href='about.html'>About Us</a></li>
+				<li><a href='Contact_us.html'>Contact Us</a></li>
+				<li id="myorder"></li>
+				<li id="lo"></li>
+			</ul>
+		</nav>
+	</div>
+	<br>
+</div>
+
+
+<div id='wrapper'>
+	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	<center><b><h3><span class="loading">Loading Profile Please Wait</span></h3></b></center>
+</div>
+	<script defer src='https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js'></script>
+
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script defer src='https://www.gstatic.com/firebasejs/7.2.3/firebase-analytics.js'></script>
+
+  <script defer src='https://www.gstatic.com/firebasejs/7.2.3/firebase-auth.js'></script>
+  <script defer src='https://www.gstatic.com/firebasejs/7.2.3/firebase-firestore.js'></script>
+  <script defer src='https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js'></script>
+		 <script defer src='profile.js'>
+ 
+
+ 
+		</script>
+		
+
+	 <!-- The core Firebase JS SDK is always required and must be listed first -->
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+</body>
+</html>
