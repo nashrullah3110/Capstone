@@ -1,0 +1,11 @@
+{
+  "ABC Construction Material Store" : {
+    "finalPrice" : 2000,
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/irobrix-f7b78.appspot.com/o/GridView%20Images%2Fpaint.png?alt=media&token=6c73a9d5-b9cd-4967-93a9-1cca56673eb9",
+    "quantity" : 1,
+    "storeDesc" : "2000",
+    "storeName" : "ABC Construction Material Store",
+    "totalPrice" : 2000,
+    "item_name":"Paint"
+  }
+}

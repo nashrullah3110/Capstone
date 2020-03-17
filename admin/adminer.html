@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Panel</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<style type="text/css">
+		body
+		{
+			background-repeat: no-repeat;
+			background-position: center;
+			height:1200px;
+		}
+		.container
+		{
+			height: 500px;
+			width: 50%;
+			background-color: white;
+			border-style: none;
+			border-width: 0.5px;
+			margin-left: 25%;
+			margin-top: 5%;
+			border-radius: 10px;
+			-webkit-box-shadow: 0px 0px 22px 12px rgba(237,201,92,1);
+-moz-box-shadow: 0px 0px 22px 12px rgba(237,201,92,1);
+box-shadow: 0px 0px 22px 12px rgba(237,201,92,1);
+		}
+		form
+		{
+			padding: 20px;
+		}
+		input[type="text"]
+		{
+			border-width: 0.5px;
+			height: 20px;
+			border-bottom-style: solid;
+			border-top-style: none;
+			border-right-style: none;
+			border-left-style: none; 
+		}
+		
+    #container
+    {
+      height: 200px;
+      width: 80%;
+      margin-left: 10%;
+      margin-bottom: 20px;
+      margin-top: 20px;
+      border-style: none;
+      box-shadow: .5rem .5rem 2rem rgba(0,0,0,1);
+    }
+    #image, #details
+    {
+      float: left;
+      margin-left: 20px;
+    }
+    #image
+    {
+      height: 196px;
+      width: 20%;
+    }
+    #details
+    {
+      height: 196px;
+      width: 400px;
+      margin-left: 15px;
+    }
+    .itemimage
+    {
+      height: 200px;
+      width: 200px;
+    }
+	</style>
+</head>
+<script type="text/javascript">
+	var file;
+	var dur="";
+</script>
+<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase.js"></script>
+    <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDYuktSJLGiIONGJAVX--GPE0qaAptm3UM",
+    authDomain: "irobrix-f7b78.firebaseapp.com",
+    databaseURL: "https://irobrix-f7b78.firebaseio.com",
+    projectId: "irobrix-f7b78",
+    storageBucket: "irobrix-f7b78.appspot.com",
+    messagingSenderId: "726815192697",
+    appId: "1:726815192697:web:e96c6c6403e86749d086a8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+</script>
+<body>
+	<div class="upcontainer">
+	<div class="container">
+		<center>
+<form>
+	Name:&nbsp&nbsp&nbsp<input type="text" name="name" id="name">
+	<br /><br>
+	Price:&nbsp&nbsp&nbsp&nbsp&nbsp<input type="text" name="price" id="price">
+	<br /><br>
+	Vendor:&nbsp&nbsp<input type="text" name="vendor" id="vendor">
+	<br /><br>
+	Category:&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<select id="cat">
+		<option value="BRICKS">BRICKS</option>
+		<option value="CEMENT">CEMENT</option>
+		<option value="SAND">SAND</option>
+		<option value="PAINT">PAINT</option>
+		<option value="WALL PUTTY">WALL PUTTY</option>
+		<option value="CONCERTE">CONCRETE</option>
+		<option value="PIPES">PIPES</option>
+		<option value="ROD">ROD</option>
+	</select>
+	<br /><br>
+	Description:<br /><br> <textarea type='textarea' name='Desc'
+            id='Desc'  value=''
+            maxlength='6000' rows='7'></textarea>
+            <br /><br>
+    &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspImage:<input type="file" id="files" name="files[]" multiple  />
+<button type="button" onclick="fn3();" >Upload</button>
+<span id="uploaded"></span>
+<br />
+<br />
+<button type="button" onclick="addproduct();" >Add Product</button>
+
+
+<script>
+	  function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+    file=files[0];
+    
+  }
+
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+  function fn3()
+  	{  var storageRef = firebase.storage().ref();
+  		var uploadTask = storageRef.child("images/"+file["name"]).put(file);
+
+// Register three observers:
+// 1. 'state_changed' observer, called any time the state changes
+// 2. Error observer, called on failure
+// 3. Completion observer, called on successful completion
+
+uploadTask.on('state_changed', function(snapshot){
+  // Observe state change events such as progress, pause, and resume
+  // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+  var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+  document.getElementById("uploaded").innerHTML='Upload is ' + progress + '% done';
+  switch (snapshot.state) {
+    case firebase.storage.TaskState.PAUSED: // or 'paused'
+      console.log('Upload is paused');
+      break;
+    case firebase.storage.TaskState.RUNNING: // or 'running'
+      console.log('Upload is running');
+      break;
+  }
+}, function(error) {
+  // Handle unsuccessful uploads
+}, function() {
+  // Handle successful uploads on complete
+  // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+  uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+    console.log('File available at', downloadURL);
+    dur=downloadURL;
+
+
+
+   
+
+}
+);
+  });
+}
+function addproduct()
+{
+ 
+
+ var name=document.getElementById("name").value;
+ var price=document.getElementById("price").value;
+ var vendor=document.getElementById("vendor").value;
+ var cat=document.getElementById('cat').value;
+ var desc=document.getElementById("Desc").value;
+ if(name=="")
+ {
+ 	alert('add name');
+ 	return;
+ }
+ if(vendor=="")
+ {
+ 	alert('vendor');
+ 	return;
+ }
+ if(cat=="")
+ {
+ 	alert('select Category');
+ 	return;
+ }
+ if(Desc=="")
+ {
+ 	alert('add Description');
+ 	return;
+ }
+ if(dur!="")
+ {
+
+
+ var key=firebase.database().ref('/Products/').push().key;
+
+	   firebase.database().ref('/Products/'+key).update({
+	   	item_name:name,
+	   	price:price,
+	   	vendor:vendor,
+	   	category:cat,
+	   	description:desc,
+	   	image:dur
+    
+  
+  },function(error)
+  {
+  	if(error)
+  	{
+  		alert(error);
+  	}
+  	else
+  	{
+  		alert("added successful");
+  	}
+  });
+	}
+	else
+	{
+		alert("Upload File");
+		return;
+	}
+
+}
+</script>
+
+</form>
+</center>
+</div>
+</div>
+<center>
+	
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script type="text/javascript">
+	function load_cart()
+{
+
+return firebase.database().ref("/Orders/").once('value').then(function(snapshot) {
+	var prevo="";
+	var person;
+  var img;
+var order_amount=0;
+var contact;
+var add;
+var price=0;
+var qty=0;
+var vendor;
+var total=0;
+    snapshot.forEach(function(childSnapshot) {
+    	var childKey = childSnapshot.key;
+    	 
+    	firebase.database().ref("/Orders/"+childKey).once('value').then(function(snapshot2) {
+    snapshot2.forEach(function(childSnapshot1) {
+    	var childKey1 = childSnapshot1.key;
+    	
+    	if(childKey1=="Order_Amount")
+    	{
+               order_amount=childSnapshot1.val();
+         
+    	}
+    	else if(childKey1=="personName")
+    	{
+               pn=childSnapshot1.val();
+    	}
+    	else if(childKey1=="ship_add")
+    	{
+               add=childSnapshot1.val();
+    	}
+    	else if(childKey1=="contact")
+    	{
+               contact=childSnapshot1.val();
+    	}
+    	else if(childKey1=="emailId")
+    	{
+               contact=childSnapshot1.val();
+    	}
+    	else if(childKey1=="imageUrl")
+    	{
+               contact=childSnapshot1.val();
+    	}
+    	else 
+    	{
+    		  console.log(order_amount);
+
+
+    	}
+    });
+    });
+    	   
+    });
+});
+
+
+	
+}
+
+setTimeout(load_cart,1000);
+</script>
+
+</body>
+</html>

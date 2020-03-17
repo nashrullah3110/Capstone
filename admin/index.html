@@ -1,0 +1,511 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+<link rel="icon" href="irobrixqw1.png">
+<title>Admin Portal</title>
+
+<style id="applicationStylesheet" type="text/css">
+	.mediaViewInfo {
+		--web-view-name: Login;
+		--web-view-id: Login;
+		--web-enable-deep-linking: true;
+	}
+	:root {
+		--web-view-ids: Login;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	#Login {
+		position: absolute;
+		box-sizing: border-box;
+		background: #E5E5E5;
+		width: 1366px;
+		height: 625px;
+		background-color: rgba(255,255,255,1);
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+		--web-view-name: Login;
+		--web-view-id: Login;
+		--web-enable-deep-linking: true;
+	}
+	#About_Us {
+		position: absolute;
+		left: 1058.314px;
+		top: 34px;
+		overflow: visible;
+		width: 67px;
+		white-space: nowrap;
+		line-height: 300px;
+		margin-top: -142.5px;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 15px;
+		color: rgba(39,39,39,1);
+	}
+	#Contact_Us {
+		position: absolute;
+		left: 1173.671px;
+		top: 34px;
+		overflow: visible;
+		width: 77px;
+		white-space: nowrap;
+		line-height: 300px;
+		margin-top: -142.5px;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 15px;
+		color: rgba(39,39,39,1);
+	}
+	#Portal {
+		position: absolute;
+		left: 967.709px;
+		top: 34px;
+		overflow: visible;
+		width: 44px;
+		white-space: nowrap;
+		line-height: 300px;
+		margin-top: -142.5px;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 15px;
+		color: rgba(39,39,39,1);
+	}
+	#Home {
+		position: absolute;
+		left: 792px;
+		top: 34px;
+		overflow: visible;
+		width: 44px;
+		white-space: nowrap;
+		line-height: 300px;
+		margin-top: -142.5px;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 15px;
+		color: rgba(39,39,39,1);
+	}
+	#Store {
+		position: absolute;
+		left: 882.855px;
+		top: 34px;
+		overflow: visible;
+		width: 38px;
+		white-space: nowrap;
+		line-height: 300px;
+		margin-top: -142.5px;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 15px;
+		color: rgba(39,39,39,1);
+	}
+	#LOG_IN {
+		position: absolute;
+		left: 792px;
+		top: 125px;
+		overflow: visible;
+		width: 73px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: bold;
+		font-size: 20px;
+		color: rgba(229,46,46,1);
+		letter-spacing: 0.5px;
+	}
+	.architectural_design_architect {
+		position: absolute;
+		overflow: visible;
+		width: 938px;
+		height: 625.5px;
+		left: -253px;
+		top: 0px;
+	}
+	#Rectangle_155 {
+		opacity: 0.63;
+	}
+	.Rectangle_155 {
+		position: absolute;
+		overflow: visible;
+		width: 685px;
+		height: 627px;
+		left: 0px;
+		top: -2px;
+	}
+	#Privacy_Policy {
+		position: absolute;
+		left: 64px;
+		top: 576px;
+		overflow: visible;
+		width: 86px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.5px;
+	}
+	#Customer_Service {
+		position: absolute;
+		left: 466px;
+		top: 576px;
+		overflow: visible;
+		width: 110px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.5px;
+	}
+	#Terms_Of_Service {
+		position: absolute;
+		left: 255px;
+		top: 576px;
+		overflow: visible;
+		width: 106px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 13px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.5px;
+	}
+	.irobrixqw1 {
+		position: absolute;
+		overflow: visible;
+		width: 34px;
+		height: 32px;
+		left: 77px;
+		top: 22px;
+	}
+	#IROBRIX {
+		position: absolute;
+		left: 139px;
+		top: 28px;
+		overflow: visible;
+		width: 60px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.5px;
+	}
+	#Welcome_Back {
+		position: absolute;
+		left: 77px;
+		top: 258px;
+		overflow: visible;
+		width: 279px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 40px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.5px;
+	}
+	#Just_fill_the_credentials_and_ {
+		position: absolute;
+		left: 77px;
+		top: 327px;
+		overflow: visible;
+		width: 202px;
+		white-space: nowrap;
+		text-align: left;
+		font-family: Segoe UI;
+		font-style: normal;
+		font-weight: normal;
+		font-size: 15px;
+		color: rgba(255,255,255,1);
+		letter-spacing: 0.5px;
+	}.box
+{
+	position: absolute;
+	margin-left: 790px;
+	margin-top: 210px;
+	width: 380px;
+	height: 40px;
+}
+.heading
+{
+	animation-duration: 1s;
+	
+	margin: 0;
+	padding: 0;
+	text-align: center;
+	color: white;
+	font-family: 'Abel', sans-serif;
+}
+.box .inputBox
+{
+	position: relative;
+}
+.box .inputBox input
+
+{
+	animation-duration: 2s;
+	animation-delay: 3s;
+	font-family: Segoe UI;
+	width: 100%;
+	padding: 15px 0;
+	font-size: 16px;
+	border: none;
+	letter-spacing: 1px;
+	margin-bottom: 30px;
+	opacity: 0.5;
+	outline: none;
+	background: transparent;
+	border-bottom: 2px solid #1A1A1A;
+	color: #1A1A1A;
+}
+.box .inputBox label
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #535353;
+	letter-spacing: 1px;
+	pointer-events: none;
+	transition: .5s;
+	font-family: 'Abel', sans-serif;
+
+}
+
+.box .inputBox input:focus ~ label,
+.box .inputBox input:valid ~ label
+{
+	top: -18px;
+	left: 0;
+	color: #0cb083;
+	font-size: 12px;
+	font-family: 'Abel', sans-serif;
+}
+
+
+a
+{
+	text-decoration: none;
+	color: black;
+}
+
+nav
+    {
+      padding-top: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      text-transform: uppercase;
+      font-size: 1.5rem;
+    }
+    .slideInLeft
+    {
+      font-size: 3rem;
+      font-weight: 300;
+    }
+    .slideInLeft span
+    {
+      color: crimson;
+    }
+    nav ul
+    {
+      display: flex;
+    }
+    nav ul li
+    {
+      list-style: none;
+    }
+    nav ul li a
+    {
+      padding: 1rem 0;
+      margin: 0 3rem;
+      position: relative;
+      letter-spacing: 1px;
+      transition: .5s;
+    }
+    nav ul li a:last-child
+    {
+      margin-right: 0;
+    }
+    nav ul li a:before
+    {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: crimson;
+      overflow: hidden;
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform.5s;
+
+    }
+    nav ul li a:hover:before
+    {
+      transform: scaleX(1);
+      transform-origin: left;
+    }
+    nav ul li a:after
+    {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      background: crimson;
+      overflow: hidden;
+      z-index: -1;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform.5s;
+
+    }
+    nav ul li a:hover:after
+    {
+      transform: scaleX(1);
+      transform-origin: right;
+    }
+    nav ul li a:hover
+    {
+      color: crimson;
+      transition-delay: .1s;
+    }
+
+
+
+    
+.btn
+{
+	background-color: #E52E2E;
+	color: white;
+	cursor: pointer;
+	height:30px;
+	border-width: 0px;
+	width: 88px;
+	transition: 0.3s;
+}
+.btn:hover
+{
+	background-color: #FFCF4C;
+}
+.for
+{
+	transition: 0.3s;
+	background-color: #E52E2E;
+	color: white;
+	cursor: pointer;
+	height:30px;
+	border-width: 0px;
+	width: 130px;	
+}
+.for:hover
+{
+	background-color: #FFCF4C;
+}
+
+
+.text:hover {
+  color: white;  
+}
+
+</style>
+</head>
+<body>
+<div id="Login">
+	
+	<svg class="architectural_design_architect">
+		<pattern elementId="architectural_design_architect_A3_Rectangle_2" id="architectural_design_architect_A3_Rectangle_2_pattern" x="0" y="0" width="100%" height="100%">
+			<image x="0" y="0" width="100%" height="100%" href="architectural_design_architect_A3_Rectangle_2_pattern.png" xlink:href="architectural_design_architect_A3_Rectangle_2_pattern.png"></image>
+		</pattern>
+		<rect fill="url(#architectural_design_architect_A3_Rectangle_2_pattern)" id="architectural_design_architect" rx="0" ry="0" x="0" y="0" width="938" height="625.5">
+		</rect>
+	</svg>
+	<svg class="Rectangle_155">
+		<rect fill="rgba(26,26,26,1)" id="Rectangle_155" rx="0" ry="0" x="0" y="0" width="685" height="627">
+		</rect>
+	
+	<svg class="irobrixqw1">
+		<pattern elementId="irobrixqw1_A3_Rectangle_5" id="irobrixqw1_A3_Rectangle_5_pattern" x="0" y="0" width="100%" height="100%">
+			<image x="0" y="0" width="100%" height="100%" href="admin/irobrixqw1.png" xlink:href="admin/irobrixqw1.png"></image>
+		</pattern>
+		<rect fill="url(#irobrixqw1_A3_Rectangle_5_pattern)" id="irobrixqw1" rx="0" ry="0" x="0" y="0" width="34" height="32">
+		</rect>
+	</svg>
+	<div id="IROBRIX">
+	</div>
+	<div id="Welcome_Back">
+		<span>Welcome Back</span>
+	</div>
+	<div id="Just_fill_the_credentials_and_">
+		
+	</div>
+	<div class="box">
+        		
+        			<form action="" method="post" >
+        				<div class="inputBox animated slideInRight">
+        					<input type="text" id="username" name="username" required="">
+        					<label>E Mail</label>
+
+        				</div>
+
+        				
+
+        				<div class="inputBox animated slideInRight">
+        					<input type="Password" id="password" name="password" required="">
+        					<label>Password</label>
+
+        				</div><br>
+
+  <input type="button" class="btn" onclick="signin()" value=" Admin Log In"> 
+<script type="text/javascript">
+	function signin()
+	{
+		var id=document.getElementById('username').value;
+		var pass=document.getElementById('password').value;
+		if(id=="admin" && pass=="adminpass")
+		{
+			window.location.href="adminer.html";
+			}
+			else
+			{
+				alert("Wrong Username/Password");
+			}
+		}
+</script>  
+  
+</div>
+</div>
+ 
+</body>
+</html>
