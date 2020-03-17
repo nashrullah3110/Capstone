@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+ <html>
+ <head>
+ 	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+ 	<title>Contact Us</title>
+ 	<link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+ 		<link rel="stylesheet" href="animate.css">
+ 		<link rel="icon" type="text/css" href="irobrixqw1.png">
+ 		<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+ 		<style type="text/css">
+ 			*
+ 			{
+ 				font-family: 'Montserrat', sans-serif;
+ 			}
+ 		body
+ 		{
+ 			background-image: url(street.jpg);
+ 		}
+ 		.container
+		{
+			max-width: 120rem;
+			width: 90%;
+			
+		}
+
+ 		
+
+ 		.flex-container{
+ 			animation-duration: 2s;
+ 			animation-delay: .2s;
+	width: 1000px;
+	margin-top: 70px;
+	min-height: 500px;
+	margin-left: 200px;
+	display: -webkit-flex; /* Safari */		
+	display: flex; /* Standard syntax */
+
+}
+.flex-container .column{
+	
+	padding: 10px;
+	background: #E52E2E;
+	-webkit-flex: 1; /* Safari */
+	-ms-flex: 1; /* IE 10 */
+	flex: 1; /* Standard syntax */
+}
+.flex-container .column.bg-alt{
+	background: rgba(0,0,0,0.6);
+}
+
+
+.pet{
+	color: white;
+	font-size: 30px;
+	margin-top: 40px;
+	letter-spacing: 1px;
+	margin-left: 70px;
+}
+.test
+{
+	color: white;
+ 			font-size: 25px;
+ 			margin-left: 55px;	
+}
+.box
+{
+	position: absolute;
+	margin-left: 50px;
+	margin-top: 100px;
+	width: 380px;
+	height: 40px;
+}
+.heading
+{
+	animation-duration: 1s;
+	margin-top: -50px;
+	margin-left: -140px;
+	padding: 0;
+	text-align: center;
+	color: white;
+}
+.box .inputBox
+{
+	position: relative;
+}
+.box .inputBox input
+
+{
+	animation-duration: 2s;
+	animation-delay: 3s;
+	width: 70%;
+	padding: 10px 0;
+	font-size: 16px;
+	border: none;
+	letter-spacing: 1px;
+	margin-bottom: 30px;
+	outline: none;
+	background: transparent;
+	border-bottom: 1px solid #fff;
+	color: white;
+}
+.box .inputBox label
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	padding: 10px 0;
+	font-size: 16px;
+	color: #fff;
+	letter-spacing: 8px;
+	pointer-events: none;
+	transition: .5s;
+
+}
+
+.box .inputBox input:focus ~ label,
+.box .inputBox input:valid ~ label
+{
+	top: -18px;
+	left: 0;
+	color: #0cb083;
+	font-size: 12px;
+}
+.new
+{
+	animation-delay: 1s;
+	text-transform: uppercase;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: white;
+	background: #0cb083;
+	padding: 10px 20px;
+	cursor: pointer;
+
+}
+.new:hover
+{
+	color: #0cb083;
+	background: #fff;
+	transition: .6s;
+
+}
+ 
+.new2
+{	
+	animation-delay: 1s;
+	
+	margin-left: 180px;
+	text-transform: uppercase;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: white;
+	background: crimson;
+	padding: 10px 20px;
+	cursor: pointer;
+
+
+}
+.new2:hover
+{
+	background: white;
+	color: crimson;
+	transition: .6s;
+
+}
+label
+{
+	letter-spacing: 30px;
+}
+.t1
+{
+	margin-top: -20px;
+	color: white;
+	margin-left: 50px;
+}
+.det
+{
+	color: white;
+	margin-left: 50px;
+}
+
+.section
+{
+	margin-left: 50px;
+}
+.image
+			{
+				margin-top: 20px;
+				margin-left: 45px;
+				height: 15px;
+				width: 15px;
+			}
+			nav ul
+		{
+			margin-left: 340px;
+			display: flex;
+		}
+		nav ul li
+		{
+			list-style: none;
+			
+		}
+		a
+		{
+			text-decoration: none;
+		}
+		nav ul li a
+		{
+
+			font-weight: bold;
+			font-size: 15px;
+			padding: 1rem 0;
+			margin: 0 3rem;
+			position: relative;
+			letter-spacing: 1px;
+			color: black;
+			transition: .5s;
+		}
+		nav ul li a:last-child
+		{
+			margin-right: 0;
+		}
+		nav ul li a::before,
+		nav ul li a::after
+		{
+			
+			content: '';
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background: #E52E2E;
+			transition: all.5s;
+			transform: scaleX(0);
+
+		}
+		nav ul li a:hover:before
+		{
+			transform: scaleX(1);
+			transform-origin: left;
+		}
+		nav ul li a:after
+		{
+			top: 0;
+		}
+		nav ul li a:before
+		{
+			bottom: 0; 
+		}
+		nav ul li a:hover:after
+		{
+			
+			transform: scaleX(1);
+			transform-origin: right;
+		}
+		nav ul li a:hover
+		{
+			text-decoration: none;
+			color: #E52E2E;
+			transition-delay: .1s;
+		}
+		.container
+		{
+			max-width: 120rem;
+			width: 90%;
+			margin: 0 auto;
+		}
+
+ 		</style>
+
+
+
+ </head>
+ <body>
+ 	<div class='container'>
+
+	<div class='logo'><a href='Home.html'><img src='irobrixqw1.png' height='32px' width='34px'></a></div>
+ 	<div class='container_animated_slideInLeft'>
+		<nav>
+			
+			<ul>
+				<li><a href='Home.html'>Home</a></li>
+				<li><a href='store/store.php'>Store</a></li>
+				<li><a href='about.html'>About Us</a></li>
+				<li><a href='Contact_us.html'>Contact Us</a></li>
+				<li id="lo"></li>
+			</ul>
+		</nav>
+	</div>
+	<br>
+</div>
+
+ <div class="flex-container animated zoomIn">
+        <div class="column">
+        	<h1 class="pet">We'd love to hear from you</h1><br>
+
+	<p class="test">Get in touch with these simple steps</p><br><br><br>
+	<p class="t1">1 &nbsp&nbspFirst Sign up and make your account</p><br>
+	<p class="t1">2 &nbsp&nbspGo to store</p><br>
+	<p class="t1">3 &nbsp&nbspAdd product to cart</p><br>
+	<p class="t1">4 &nbsp&nbspGo to payment mode</p><br>
+	<p class="t1">5 &nbsp&nbspOrder</p><br>
+	<p class="t1">6 &nbsp&nbspGo to profile to slect professionals. </p>
+
+        </div>
+
+
+        <div class="column bg-alt">
+        	<div class="box">
+        		<h2 class="heading">Our Headquarter</h2>
+        		<p class="det">Irobrix Internet Private Limited,<br>
+Clove Embassy, Park Street,<br>
+Connaught Place, Inner Ring Road,<br>
+Delhi, 110001,
+India <br>
+Telephone: 1800 508 5080</p>
+        			
+	<div class="section">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14008.113145599795!2d77.20653216767563!3d28.62891431870478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37b741d057%3A0xcdee88e47393c3f1!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1575232005187!5m2!1sen!2sin" width="265" height="200" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+	</div>
+
+<div class="s-media">
+		<img src="facebook.png" class="image">
+		<img src="linkedins.png" class="image">
+		<img src="searchs.png" class="image">
+		<img src="twitters.png" class="image">
+		<img src="instagram.png" class="image">
+		</div>
+
+
+        	</div>
+        	
+        </div>
+    </div>
+
+ </body>
+ </html>

@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>About Us</title>
+	<link rel="icon" type="text/css" href="irobrixqw1.png">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+	<style type="text/css">
+		
+		*{
+
+			margin: 5px;
+			padding: 0;
+			box-sizing: border-box;
+		}	
+
+		html
+		{
+			font-size: 10px;
+			font-family: 'Montserrat', sans-serif;
+		}
+
+		a
+		{
+			text-decoration: none;
+			color: #fff;
+		}
+
+		section	
+		{
+			padding: 20px;
+			background-color: #fff;
+		}
+
+		.heading
+		{
+			text-transform: uppercase;
+			font-size: 2rem;
+			letter-spacing: 3px;
+			margin-right: -3px;
+			margin-bottom: 5rem;
+			text-align: center;
+			color: #333;
+			position: relative;
+		}
+
+		.heading::after
+		{
+			content: "";
+			width: 10rem;
+			height: .8rem;
+			background-color: #E52E2E;
+			position: absolute;
+			bottom: -2rem;
+			left: 50%;
+			transform: translateX(-50%);
+			border-radius: 2rem;
+		}
+		.card-wrapper
+		{
+			display: flex;
+			align-items: center;
+			align-content: center;
+			flex-direction: column;
+			margin-left: -20px;
+
+		}
+		.card
+		{
+			width: 25rem;
+			background-color: #ebeef8;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			margin: 2rem 0;
+			box-shadow: .5rem .5rem 3rem rgba(0,0,0,0.2);
+		}
+
+		.card .card-img
+		{
+			width: 100%;
+			height: 26rem;
+			object-fit: cover;
+			-webkit-clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+			clip-path: polygon(0 0, 100% 0, 100% 70%, 0% 100%);
+		}
+
+		.profile-img
+		{
+			width: 15rem;
+			height: 15rem;
+			object-fit: cover;
+			border-radius: 50%;
+			margin-top: -11rem;
+			z-index: 999;
+			border: 1rem solid #ebeef8;
+		}
+
+		.card h1
+		{
+			font-size: 2.5rem;
+			color: #333;
+			margin: 1.5rem 0;
+
+		}
+
+		.job-title
+		{
+			color: #777;
+			font-size: 1.5rem;
+			font-weight: 300;
+
+		}
+
+		.about
+		{
+			font-size: 1.5rem;
+			margin: 1.5rem 0;
+			font-style: italic;
+			text-align: center;
+			color: #333;
+		}
+
+		.card .btn
+		{
+			padding: 1rem 2.5rem;
+			background-color: #E52E2E;
+			border-radius: 2rem;
+			margin: 1rem 0;
+			text-transform: uppercase;
+			color: #eee;
+			font-size: 1.4rem;
+			transition: all .5s;
+		}
+
+		.card .btn:hover
+		{
+			background-color: #FFCF4C;
+			transform: translateY(-2px);
+			box-shadow: .5rem .5rem 2rem rgba(0,0,0,.2);
+		}
+
+		.card .btn:active
+		{
+			transform: translateY(0);
+			box-shadow: none;
+		}
+
+		.social-media
+		{
+			width: 100%;
+			list-style: none;
+			display: flex;
+			justify-content: space-evenly;
+			padding: 2rem 0;
+			margin-top: 1.5rem;
+			border-top: 1px solid rgba(0,0,0,.1);
+		}
+
+		.social-media i
+		{
+			font-size: 3rem;
+			transition: color .5s;
+		}
+
+	/*	.fa-facebook-square
+		{
+			color: #3b5999;
+		}
+
+		.fa-instagram-square
+		{
+			color: #e6683c;
+		}
+
+		.fa-linkedin-square
+		{
+			color: #3b5999;
+		}
+
+		.fa-facebook-square:hover,
+		.fa-instagram-square:hover,
+		.fa-linkedin-square:hover
+		{
+			color: #45e19f;
+		}
+*/
+		@media screen and (min-width: 700px)
+		{
+			.card-wrapper
+			{
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: center;
+				align-items: center;
+			}
+			.card
+			{
+				margin: 2rem;
+			}
+
+			@keyframes fadeIn{
+				from
+				{
+					opacity: 0;
+
+				}
+				to
+				{
+					opacity: 1;
+
+				}
+
+			}	
+				.card:nth-child(1)
+				{
+					animation: fadeIn .5s .5s backwards;
+				}
+				.card:nth-child(2)
+				{
+					animation: fadeIn .5s 1s backwards;
+				}.card:nth-child(3)
+				{
+					animation: fadeIn .5s 1.5s backwards;
+				}.card:nth-child(4)
+				{
+					animation: fadeIn .5s 2s backwards;
+				}
+			
+		}
+
+			.fab:hover
+			{
+				transform: translateY(-2px);
+			}
+
+			.ins:hover
+			{
+				transform: translateY(-2px);
+			}
+
+			.lin:hover
+			{
+				transform: translateY(-2px);
+			}
+
+			span
+			{
+				color: 
+			}
+
+			.s-media
+			{
+				display: inline;
+				margin-left: 80px;
+				float: left;
+
+			}
+			.image
+			{
+				margin: 10px;
+				height: 15px;
+				width: 15px;
+			}
+			.scl
+			{
+				font-size: 15px;
+				margin-left: 95px;
+			}
+			.line
+			{
+				width: 99%;
+				background-color: gray;
+				height: 2px;
+			}
+			.cp
+			{
+				float: right;
+				margin-right: 20px;
+			}
+
+nav ul
+		{
+			margin-left: 340px;
+			display: flex;
+		}
+		nav ul li
+		{
+			list-style: none;
+			
+		}
+		a
+		{
+			text-decoration: none;
+		}
+		nav ul li a
+		{
+
+			font-weight: bold;
+			font-size: 15px;
+			padding: 1rem 0;
+			margin: 0 3rem;
+			position: relative;
+			letter-spacing: 1px;
+			color: black;
+			transition: .5s;
+		}
+		nav ul li a:last-child
+		{
+			margin-right: 0;
+		}
+		nav ul li a::before,
+		nav ul li a::after
+		{
+			
+			content: '';
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			background: #E52E2E;
+			transition: all.5s;
+			transform: scaleX(0);
+
+		}
+		nav ul li a:hover:before
+		{
+			transform: scaleX(1);
+			transform-origin: left;
+		}
+		nav ul li a:after
+		{
+			top: 0;
+		}
+		nav ul li a:before
+		{
+			bottom: 0; 
+		}
+		nav ul li a:hover:after
+		{
+			
+			transform: scaleX(1);
+			transform-origin: right;
+		}
+		nav ul li a:hover
+		{
+			text-decoration: none;
+			color: #E52E2E;
+			transition-delay: .1s;
+		}
+		.container
+		{
+			max-width: 120rem;
+			width: 90%;
+			margin: 0 auto;
+		}
+		
+	</style>
+
+</head>
+<body>
+	<div class='container'>
+
+	<div class='logo'><a href='Home.html'><img src='irobrixqw1.png' height='32px' width='34px'></a></div>
+	<div class='container_animated_slideInLeft'>
+		<nav>
+			
+			<ul>
+				<li><a href='Home.html'>Home</a></li>
+				<li><a href='store/store.php'>Store</a></li>
+				<li><a href='about.html'>About Us</a></li>
+				<li><a href='Contact_us.html'>Contact Us</a></li>
+				<li id="lo"></li>
+			</ul>
+		</nav>
+	</div>
+	<br>
+</div>
+	<section>
+		<div class="container">
+			<h1 class="heading">Meet <span>The</span>  Team</h1>
+				<div class="card-wrapper">
+					<div class="card">
+						<img src="dark.jpg" alt="card background" class="card-img">
+						<img src="cv.jpg" alt="profile image" class="profile-img">
+						<h1>Kaushik Pal</h1>
+						<p class="job-title">Web developer</p>
+						<p class="about">
+							I’m a web developer and graphic designer.  user experience and visual design.
+						</p>
+						<a href="https://www.gmail.com" class="btn">Contact</a>
+						<ul class="social-media">
+							<li><a href="#"><img src="facebook (1).png" height="25px" width="25px" class="fab"></img></a></li>
+							<li><a href="#"><img src="instagram (1).png" height="25px" width="25px" class="ins"></img></a></li>
+							<li><a href="#"><img src="linkedin.png" height="25px" width="25px" class="lin"></img></a></li>
+						</ul>
+					</div>
+
+
+					<div class="card">
+						<img src="dark.jpg" alt="card background" class="card-img">
+						<img src="babul.jpg" alt="profile image" class="profile-img">
+						<h1>Nashrullah Ansari</h1>
+						<p class="job-title">Web developer</p>
+						<p class="about">
+							I’m a web developer and love to do back-end.  user experience and visual design.
+						</p>
+						<a href="https://www.gmail.com" class="btn">Contact</a>
+						<ul class="social-media">
+							<li><a href="#"><img src="facebook (1).png" height="25px" width="25px" class="fab"></img></a></li>
+							<li><a href="#"><img src="instagram (1).png" height="25px" width="25px" class="ins"></img></a></li>
+							<li><a href="#"><img src="linkedin.png" height="25px" width="25px" class="lin"></img></a></li>
+						</ul>
+					</div>
+
+
+					<div class="card">
+						<img src="dark.jpg" alt="card background" class="card-img">
+						<img src="parag.jpg" alt="profile image" class="profile-img">
+						<h1>Parag Agrawal</h1>
+						<p class="job-title">Android developer</p>
+						<p class="about">
+							I’m an android developer and like to develop android apps. Have a good experience in application design.
+						</p>
+						<a href="https://www.gmail.com" class="btn">Contact</a>
+						<ul class="social-media">
+							<li><a href="#"><img src="facebook (1).png" height="25px" width="25px" class="fab"></img></a></li>
+							<li><a href="#"><img src="instagram (1).png" height="25px" width="25px" class="ins"></img></a></li>
+							<li><a href="#"><img src="linkedin.png" height="25px" width="25px" class="lin"></img></a></li>
+						</ul>
+					</div>
+
+
+					<div class="card">
+						<img src="dark.jpg" alt="card background" class="card-img">
+						<img src="abhi.jpg" alt="profile image" class="profile-img">
+						<h1>Abhishek Kumar</h1>
+						<p class="job-title">Android developer</p>
+						<p class="about">
+							I’m an android developer and worked on many android apps. Want o work on some projects to learn.
+						</p>
+						<a href="https://www.gmail.com" class="btn">Contact</a>
+						<ul class="social-media">
+							<li><a href="#"><img src="facebook (1).png" height="25px" width="25px" class="fab"></img></a></li>
+							<li><a href="#"><img src="instagram (1).png" height="25px" width="25px" class="ins"></img></a></li>
+							<li><a href="#"><img src="linkedin.png" height="25px" width="25px" class="lin"></img></a></li>
+						</ul>
+					</div>
+
+					
+				</div>
+		</div>
+	</section>
+	<div class="footer">
+		<div class="line"></div>
+		<h1 class="scl">SOCIALIZE</h1>
+		<div class="s-media">
+		<a href="https://www.facebook.com/"><<img src="facebook.png" href="facebook.com" class="image"></a>
+		<a href="https://www.linkedin.com/"><img src="linkedins.png" href="linkedin.com" class="image"></a>
+		<a href="https://www.google.com/"><img src="searchs.png" href="google.com" class="image"></a>
+		<a href="https://twitter.com/"><img src="twitter.png" href="twitter.com" class="image"></a>
+		<a href="https://www.instagram.com/"><img src="instagram.png" href="instagram.com" class="image"></a>
+		</div>
+
+		<div class="cp">
+			<p>Copyright 2019 All Rights Reserved</p>
+		</div>
+	</div>
+</body>
+</html>
