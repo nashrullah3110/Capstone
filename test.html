@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+
+	<link rel="icon" type="text/css" href="irobrixqw1.png">
+	<title>Profile</title>
+	<script src="https://www.gstatic.com/firebasejs/7.2.3/firebase.js"></script>
+    <script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDYuktSJLGiIONGJAVX--GPE0qaAptm3UM",
+    authDomain: "irobrix-f7b78.firebaseapp.com",
+    databaseURL: "https://irobrix-f7b78.firebaseio.com",
+    projectId: "irobrix-f7b78",
+    storageBucket: "irobrix-f7b78.appspot.com",
+    messagingSenderId: "726815192697",
+    appId: "1:726815192697:web:e96c6c6403e86749d086a8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+</script>
+  <script type="text/javascript">
+  	var role="";
+  	var username = "";
+   var email = "";
+   var contact = "";
+   var proj = "";
+   var exp= "";
+   var dur="";
+     	var file;
+     	function fn12()
+{
+firebase.database().ref('/'+role+'/' +firebase.auth().currentUser.uid).update({
+    name: username,
+    emailID: email,
+    phoneNo :contact,
+    imageUrl:dur,
+    project:proj,
+    experience:exp
+    
+  },function(error) {
+    if (error) {
+      console.log(error);
+    } else {
+    	console.log("successful");
+            window.location.href="Profile.html"; //This will refresh parent window.
+window.close();
+
+    }
+});
+}
+function fn9()
+{
+	    return firebase.database().ref('/'+role+'/' + firebase.auth().currentUser.uid).once('value').then(function(snapshot) {
+   username = (snapshot.val() && snapshot.val().name) || (snapshot.val() && snapshot.val().Name)||'Anonymous';
+   email = (snapshot.val() && snapshot.val().emailID) ||(snapshot.val() && snapshot.val().Email)|| 'Anonymous';
+   contact = (snapshot.val() && snapshot.val().phoneNo) || 'Anonymous';
+   proj = (snapshot.val() && snapshot.val().projects) || 'None';
+   exp= (snapshot.val() && snapshot.val().experience) || 'None';
+    console.log('read');
+   
+  }
+
+  ).catch(function(err){console.log("error:"+err)}); 
+	    }
+  	function fn5()
+
+{
+	window.location.href='Profile.html';
+}
+  	function fn3(role,userId)
+  	{  var storageRef = firebase.storage().ref();
+  		var uploadTask = storageRef.child("images/"+file["name"]).put(file);
+
+// Register three observers:
+// 1. 'state_changed' observer, called any time the state changes
+// 2. Error observer, called on failure
+// 3. Completion observer, called on successful completion
+
+uploadTask.on('state_changed', function(snapshot){
+  // Observe state change events such as progress, pause, and resume
+  // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
+  var progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+  console.log('Upload is ' + progress + '% done');
+  switch (snapshot.state) {
+    case firebase.storage.TaskState.PAUSED: // or 'paused'
+      console.log('Upload is paused');
+      break;
+    case firebase.storage.TaskState.RUNNING: // or 'running'
+      console.log('Upload is running');
+      break;
+  }
+}, function(error) {
+  // Handle unsuccessful uploads
+}, function() {
+  // Handle successful uploads on complete
+  // For instance, get the download URL: https://firebasestorage.googleapis.com/...
+  uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
+    console.log('File available at', downloadURL);
+    dur=downloadURL;
+     setTimeout(fn9,4000);
+    
+     setTimeout(fn12,8000);
+
+
+   
+
+}
+);
+  });
+}
+  	function fn2() {
+  		$("#inner").html("<center><iframe src='https://giphy.com/embed/xTkcEQACH24SMPxIQg' width='100' height='100' frameBorder='0' class='giphy-embed' allowFullScreen></iframe><p>Uploading</p></center>")
+	var user=firebase.auth().currentUser;
+	console.log(user);
+	if(user)
+{
+
+	var fd=1;
+  firebase.database().ref().child("Architects").orderByChild("emailID").equalTo(user.email).on("value", function(snapshot) {
+if (snapshot.exists() && fd==1) {
+     fd=0;
+    $('#role').html("Architect");
+    role="Architects";
+}
+});
+  firebase.database().ref().child("Architects").orderByChild("Email").equalTo(user.email).on("value", function(snapshot) {
+if (snapshot.exists() && fd==1) {
+     fd=0;
+    $('#role').html("Architect");
+    role="Architects";
+}
+});
+
+      firebase.database().ref().child("Engineers").orderByChild("emailID").equalTo(user.email).on("value", function(snapshot) {
+if (snapshot.exists() && fd==1) {
+     fd=0;
+     role="Engineers";
+
+    $('#role').html("Engineer");
+}
+});
+      firebase.database().ref().child("Engineers").orderByChild("Email").equalTo(user.email).on("value", function(snapshot) {
+if (snapshot.exists() && fd==1) {
+     fd=0;
+     role="Engineers";
+
+    $('#role').html("Engineer");
+}
+});
+
+        firebase.database().ref().child("Interior Designers").orderByChild("emailID").equalTo(user.email).on("value", function(snapshot) {
+if (snapshot.exists() && fd==1) {
+     fd=0;
+     role="Interior Designers";
+    $('#role').html("Interior Designer");
+}
+});
+        firebase.database().ref().child("Interior Designers").orderByChild("Email").equalTo(user.email).on("value", function(snapshot) {
+if (snapshot.exists() && fd==1) {
+     fd=0;
+     role="Interior Designers";
+    $('#role').html("Interior Designer");
+}
+});
+        firebase.database().ref().child("Users").orderByChild("emailID").equalTo(user.email).on("value", function(snapshot) {
+if (snapshot.exists() && fd==1) {
+     fd=0;
+     role="Users";
+    $('#role').html("Customer");
+}
+});
+	setTimeout(function(){ fn3(role,user.uid) },3000);
+	
+}
+else
+{
+	alert("Please login");
+	window.location.href="Login.html";
+}
+
+}
+  </script>
+</head>
+<body  style="color:white;background-color: black;">
+<div id="inner">
+	<center>
+<input type="file" id="files" name="files[]" multiple  />
+<button type="button" onclick="fn2();" style="border-color: white;border-width: 2px;color:white;background-color: black;">Upload</button>
+</center>
+</div>
+<script>
+	  function handleFileSelect(evt) {
+    var files = evt.target.files; // FileList object
+    file=files[0];
+    
+  }
+
+  document.getElementById('files').addEventListener('change', handleFileSelect, false);
+</script>
+
+</body>
+</html>
